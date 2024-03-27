@@ -1,5 +1,4 @@
 .jumbotron {
-  padding-top: 6rem;
   background-color: #daffff;
 }
 
@@ -9,4 +8,13 @@
 
 section {
   padding-top: 5rem;
+}
+
+.paragraphs {
+  text-align: justify;
+}
+
+footer {
+  height: 50px;
+  background-color: #007bff;
 }
