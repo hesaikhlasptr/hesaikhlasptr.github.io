@@ -1,3 +1,10 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 .jumbotron {
   background-color: #daffff;
 }
@@ -15,6 +22,104 @@ section {
 }
 
 footer {
-  height: 50px;
   background-color: #007bff;
+}
+
+/* My Player Section */
+.player-box {
+  position: relative;
+  background-color: #ef0107;
+  border-radius: 10px;
+  height: 500px;
+  transform-style: preserve-3d;
+}
+
+.corner-img {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 50px; /* or any size you prefer */
+  height: auto; /* maintain aspect ratio */
+  border: 0; /* optional, depending on your design */
+  /* any additional styling you want for the small image */
+  transform: translate3d(0, 0, 25px);
+}
+
+.player-box::before {
+  content: "Please";
+  position: absolute;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  font-style: italic;
+  top: 80px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.player-box:hover::before {
+  opacity: 0.5;
+}
+
+.player-box::after {
+  content: "Welcome";
+  position: absolute;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  font-style: italic;
+  top: 380px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.player-box:hover::after {
+  opacity: 0.5;
+}
+
+.player-name {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 2rem;
+  opacity: 0;
+  transform: translate3d(0, 0, 25px);
+  transition: 0.5s;
+}
+
+.player-box:hover .player-name {
+  top: 20px;
+  opacity: 1;
+}
+
+.detail-button {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.player-box:hover .detail-button {
+  bottom: 20px;
+  opacity: 1;
+}
+
+.player-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 300px;
+  transition: 0.5;
+}
+
+.player-box:hover .player-img {
+  transform: translate3d(-50%, -50%, 50px) scale(1.2);
 }
